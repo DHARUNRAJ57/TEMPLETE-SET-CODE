@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Title -->
+    <title>Go Savaari</title>
+    <!-- Favicon Icon -->
+    <link
+      rel="shortcut icon"
+      href="assets/images/logos/favicon1.png"
+      type="image/x-icon"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Flaticon -->
+    <link rel="stylesheet" href="assets/css/flaticon.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/css/fontawesome-5.14.0.min.css" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css" />
+    <!-- Nice Select -->
+    <link rel="stylesheet" href="assets/css/nice-select.min.css" />
+    <!-- jQuery UI -->
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
+    <!-- Animate -->
+    <link rel="stylesheet" href="assets/css/aos.css" />
+    <!-- Slick -->
+    <link rel="stylesheet" href="assets/css/slick.min.css" />
+    <!-- Main Style -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <!-- Preloader -->
+      <div class="preloader"><div class="custom-loader"></div></div>
+
+      <!-- main header -->
+      <%- include('./partials/header') -%>
+
+      <!-- Page Banner Start -->
+      <section
+      class="page-banner-area overlay py-50 rel z-1 bgs-cover text-center"
+      
+    >
+    </section>
+      <!-- Page Banner End -->
+
+      <!-- Contact Page Start -->
+      <section class="contact-page py-130 rpy-100">
+        <div class="container">
+          <div class="row gap-100 align-items-center">
+            <div class="col-lg-5">
+              <div class="contact-info-part">
+                <div
+                  class="section-title mb-50"
+                  data-aos="fade-up"
+                  data-aos-duration="1500"
+                  data-aos-offset="50"
+                >
+                  <h2>Feel Free to Contact Us, Get In Touch</h2>
+                  <p>
+                    We're here to assist you in any way we can. Whether you have
+                    questions, feedback, or just want to say hello
+                  </p>
+                </div>
+                <div
+                  class="contact-info-item style-two"
+                  data-aos="fade-up"
+                  data-aos-delay="50"
+                  data-aos-duration="1500"
+                  data-aos-offset="50"
+                >
+                  <div class="icon">
+                    <i class="fal fa-map-marker-alt"></i>
+                  </div>
+                  <div class="content">
+                    <span class="title">Location</span>
+                    <span class="text"
+                      >NO132 133A 8TH. F CROSS 14 TH MAIN BANGALORE - 560040
+                      KARNATAKA</span
+                    >
+                  </div>
+                </div>
+                <div
+                  class="contact-info-item style-two"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                  data-aos-duration="1500"
+                  data-aos-offset="50"
+                >
+                  <div class="icon">
+                    <i class="far fa-envelope-open-text"></i>
+                  </div>
+                  <div class="content">
+                    <span class="title">Email Address</span>
+                    <span class="text">
+                      <a href="mailto:support@gmail.com">support@gmail.com</a>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="contact-info-item style-two"
+                  data-aos="fade-up"
+                  data-aos-delay="150"
+                  data-aos-duration="1500"
+                  data-aos-offset="50"
+                >
+                  <div class="icon">
+                    <i class="fal fa-phone-volume"></i>
+                  </div>
+                  <div class="content">
+                    <span class="title">Make A Call</span>
+                    <span class="text">
+                      <a href="calto:+919986834563"> 9986834563</a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <div
+                class="contact-form br-10 bgc-lighter rmt-60"
+                name="contact-form"
+                data-aos="fade-left"
+                data-aos-duration="1500"
+                data-aos-offset="50"
+              >
+                <form
+                  id="contactForm"
+                  class="contactForm"
+                  name="contactForm"
+                  action="assets/php/form-process.php"
+                  method="post"
+                >
+                  <img
+                    class="shape-one"
+                    src="assets/images/shapes/star-yellow-shape.png"
+                    alt="Star Shape"
+                  />
+                  <img
+                    class="shape-two"
+                    src="assets/images/shapes/star-black-shape.png"
+                    alt="Star Shape"
+                  />
+                  <h5>Contact Us</h5>
+                  <p>
+                    Questions or you would just like to say hello, contact us.
+                  </p>
+                  <div class="row mt-30">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          class="form-control"
+                          value=""
+                          placeholder="Your Name"
+                          required
+                          data-error="Please enter your Name"
+                        />
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="email">Email</label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          class="form-control"
+                          value=""
+                          placeholder="gmail"
+                          required
+                          data-error="Please enter your Email"
+                        />
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea
+                          name="message"
+                          id="message"
+                          class="form-control"
+                          rows="4"
+                          placeholder="Write Message"
+                          required
+                          data-error="Please enter your Message"
+                        ></textarea>
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group mb-0">
+                        <button type="submit" class="theme-btn">
+                          Contact us <i class="far fa-arrow-right"></i>
+                        </button>
+                        <div id="msgSubmit" class="hidden"></div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="cta-area bgs-cover py-20 rpy-100"
+        style="background-image: url(assets/images/team/CTA.png)"
+      >
+        <div class="container">
+          <div class="row align-items-center justify-content-between">
+            <div class="col-xl-6 col-lg-8">
+              <div
+                class="cta-content text-white rmb-35"
+                data-aos="fade-left"
+                data-aos-duration="1500"
+                data-aos-offset="50"
+              >
+                <div class="section-title mb-40">
+                  <span class="subtitle d-block mb-10">RIDE WITH US TODAY</span>
+                  <h2>Quick, reliable, and forever ready to go. Reserve a taxi today.</h2>
+                </div>
+                <a href="/booking" class="theme-btn"
+                  >Book Now<i class="far fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Page End -->
+
+      <!-- Location Map Area Start -->
+      <div class="contact-page-map" style="padding-top: 90px;">
+        <div class="our-location">
+          <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7777.53182430874972!2d77.53182430874972!3d12.956312801328787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1706508986625!5m2!1sen!2s"
+          style="border: 0; width: 100%; height: 600px;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+      
+        </div>
+      </div>
+      <!-- Location Map Area End -->
+
+      <!-- footer area start -->
+      <%- include('./partials/footer') -%>
+      <!-- footer area end -->
+    </div>
+    <!--End pagewrapper-->
+
+    <!-- Jquery -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Appear Js -->
+    <script src="assets/js/appear.min.js"></script>
+    <!-- Slick -->
+    <script src="assets/js/slick.min.js"></script>
+    <!-- jQuery UI -->
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- Nice Select -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- Image Loader -->
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <!-- Circle Progress -->
+    <script src="assets/js/circle-progress.min.js"></script>
+    <!-- Skillbar -->
+    <script src="assets/js/skill.bars.jquery.min.js"></script>
+    <!-- Isotope -->
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <!--  AOS Animation -->
+    <script src="assets/js/aos.js"></script>
+    <!-- Custom script -->
+    <script src="assets/js/script.js"></script>
+
+    <!-- For Contact Form -->
+    <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+    <script src="assets/js/form-validator.min.js"></script>
+    <script src="assets/js/contact-form-script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Title -->
+    <title>Go Savaari</title>
+    <!-- Favicon Icon -->
+    <link
+      rel="shortcut icon"
+      href="assets/images/logos/favicon1.png"
+      type="image/x-icon"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Flaticon -->
+    <link rel="stylesheet" href="assets/css/flaticon.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/css/fontawesome-5.14.0.min.css" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css" />
+    <!-- Nice Select -->
+    <link rel="stylesheet" href="assets/css/nice-select.min.css" />
+    <!-- Animate -->
+    <link rel="stylesheet" href="assets/css/aos.css" />
+    <!-- Slick -->
+    <link rel="stylesheet" href="assets/css/slick.min.css" />
+    <!-- Main Style -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <!-- Preloader -->
+      <div class="preloader"><div class="custom-loader"></div></div>
+      <!-- main header -->
+      <%- include('./partials/header') -%>
+      <!-- Page Banner Start -->
+      <section
+      class="page-banner-area overlay py-50 rel z-1 bgs-cover text-center"
+
+    >
+    </section>
+
+
+    <!-- <div style="
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #000000;
+            width: 125px;
+            max-width: 125px;
+            height: 125px; 
+            max-height: 125px;
+          ">
+      
+    </div> -->
+      <!-- Page Banner End -->
+      <!-- Pricing Area Start -->
+      <section class="pricing-area pt-125 rpt-95  rpb-70 rel z-2">
+        <div class="container">
+          <div class="row justify-content-center">
+
+            <div
+              class="section-title text-center mb-45"
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              data-aos-offset="50"
+            >
+              <h2>One Way Trip</h2>
+            </div>
+
+
+            <div class="container">
+              <div  
+                class="row row-cols-3"
+                style="
+                  padding: 10px;
+                  gap: 15px;
+                  display: flex;
+                  column-gap: 50px;
+                  row-gap: 50px;
+                  justify-content: start;
+                  align-items: center;
+                "
+              >
+
+                <% const vehicleImage={ "Sedan" : '/assets/images/cars/swift.png',
+                "Assured Sedan" : '/assets/images/cars/etios.png', "MUV" :
+                '/assets/images/cars/ertiga.png',"Assured Innova" :
+                '/assets/images/cars/innova1.png', "Innova Crysta" :
+                '/assets/images/cars/crysta.png' } %>
+                <% data?.tariff?.oneWay?.forEach((vehicle, index)=>{ %>                  
+                  <div
+                    key="<%= index %>" 
+                    class="col-xl-4 col-md-6 col-sm-10 p-0 shadow" 
+                    style="
+                      border-radius: 10px;
+                      position: relative;
+                      height: 550px;
+                      max-height: 550px;
+                      width: 400px;
+                      max-width: 400px;
+                    "
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                    data-aos-offset="50"
+                    onmouseover="this.style.transform='translateY(-50px)'; this.style.boxShadow='0 10px 20px rgba(0, 0, 0, 0.1)';"
+                    onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 8px rgba(0, 0, 0, 0.1)';"
+                  >
+                  
+                    <h5
+                      style="
+                        position: absolute;
+                        display: flex;
+                        color: #fff;
+                        z-index: 100;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        top: 10px;
+                        left: 10%;
+                        right: 10%;
+                        height: 120px;
+                        max-height: 120px;
+                        padding-inline: 20px;
+                      "
+                      >
+                      <%= vehicle?.dName %>
+                    </h5>
+                    <div
+                      style="
+                        position: absolute;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: #fff;
+                        z-index: 100;
+                        top: 140px;
+                        height: 120px;
+                        max-height: 120px;
+                        width: 100%; 
+                      "
+                    >
+                      <div
+                        style="
+                          border: 1px solid #000000; 
+                          background-color: #fff; 
+                          padding: 20px;
+                          border-radius:50%!important;
+                        "
+                      >
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          height="60" 
+                          width="60"
+                          viewBox="0 0 512 512">
+                          <path 
+                            fill="#fec458"
+                            d="M192 0c-17.7 0-32 14.3-32 32V64c0 .1 0 .1 0 .2c-38.6 2.2-72.3 27.3-85.2 64.1L39.6 228.8C16.4 238.4 0 261.3 0 288V432v48c0 17.7 14.3 32 32 32H64c17.7 0 32-14.3 32-32V432H416v48c0 17.7 14.3 32 32 32h32c17.7 0 32-14.3 32-32V432 288c0-26.7-16.4-49.6-39.6-59.2L437.2 128.3c-12.9-36.8-46.6-62-85.2-64.1c0-.1 0-.1 0-.2V32c0-17.7-14.3-32-32-32H192zM165.4 128H346.6c13.6 0 25.7 8.6 30.2 21.4L402.9 224H109.1l26.1-74.6c4.5-12.8 16.6-21.4 30.2-21.4zM96 288a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm288 32a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"
+                          />
+                        </svg>
+                      
+                      </div>
+                    </div>
+                    <div
+                      style="
+                        background-color: rgb(99, 99, 99);
+                        border-top-left-radius: 10px; 
+                        border-top-right-radius: 10px; 
+                        clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 100px), 0% 100%);
+                        padding-top: 20px;
+                        height: 240px;
+                        opacity: 90%;
+                      "
+                    >
+                      <img 
+                        src="<%= vehicleImage[`${vehicle?.cName!='Assured SUV' ? vehicle?.cName : vehicle?.dName}`] %>" 
+                        alt="<%= vehicle?.dName %>"
+                        style="
+                          width: 100%; 
+                          max-height: 200px;
+                          opacity: 50%;
+                        " 
+                      />
+                    </div>
+                    <div 
+                      class="container"
+                      style="
+                        padding-bottom: 20px;
+                        "
+                      >
+                      <div  
+                        style="
+                          padding: 10px;
+                          gap: 15px;
+                          display: flex;
+                          flex-direction: column;
+                          justify-content: center;
+                          align-items: center;
+                        "
+                      >
+                      
+                        <h4>Rs. <%= vehicle?.rate ?? 0 %> / One Way Trip</h4>
+                        
+                        <div
+                          style="
+                            display: flex;
+                            flex-direction: column;
+                            gap: 5px;
+                            justify-content: center;
+                            align-items: center;
+                          "
+                        >
+                          <!-- <div style="display: flex; gap: 12px; ">
+                            <span>Round Trip</span>
+                            <span>Rs. <%= vehicle?.Rrate ?? 0 %></span>
+                          </div> -->
+                          
+                          <div style="display: flex; gap: 12px;">
+                            <span>Driver Allowance</span>
+                            <span>Rs. <%= vehicle?.betta ?? 0 %></span>
+                          </div>
+                          
+                          <div style="display: flex; gap: 12px; ">
+                            <span>One-Way Trip - Minimun</span>
+                            <span>
+                              <%= vehicle?.mOW ?? 0 %> Km
+                            </span>
+                          </div>
+                          
+                          <!-- <div style="display: flex; gap: 12px;">
+                            <span>Round Trip - Minimun</span>
+                            <span>
+                              <%= vehicle?.mR ?? 0 %> Km
+                            </span>
+                          </div> -->
+                        </div>
+                        <span style="margin-top: 10px;">Toll, State Tax, Hills, Parking Charges - Extra</span>                      
+                        <div class="d-flex justify-content-center align-items-center">
+                          <a href="booking" class="theme-btn">Book Now <i class="far fa-arrow-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <% }) %>
+                
+              </div>
+            </div>
+        
+          </div>
+        </div>
+        <div class="pricing-three-shapes d-none d-sm-block">
+          <div class="shape one">
+            <img src="assets/images/shapes/price1.png" alt="Shape" />
+          </div>
+          <div class="shape two">
+            <img src="assets/images/shapes/price2.png" alt="Shape" />
+          </div>
+        </div>
+      </section>
+      <!-- Pricing Area End -->
+      <!-- Price Three Area Start -->
+      <section class="pricing-area pt-125 rpt-95 pb-100 rpb-70 rel z-2">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-9 col-md-11">
+              <div
+                class="section-title text-center mb-45"
+                data-aos="fade-up"
+                data-aos-duration="1500"
+                data-aos-offset="50"
+              >
+                <h2>Round Trip</h2>
+              </div>
+            </div>
+            <div class="container">
+              <div  
+              class="row row-cols-3"
+                  style="
+                    padding: 10px;
+                    gap: 15px;
+                    column-gap: 50px;
+                    row-gap: 50px;
+                    justify-content: start;
+                    align-items: center;
+                  "
+                >
+                
+                <% data?.tariff?.round?.forEach((vehicle, index)=>{ %>
+                  <div
+                    key="<%= index %>" 
+                    class="col-xl-4 col-md-6 col-sm-10 p-0 shadow" 
+                    style="
+                      border-radius: 10px;
+                      position: relative;
+                      height: 550px;
+                      max-height: 550px;
+                      width: 400px;
+                      max-width: 400px;
+                    "
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                    data-aos-offset="50"
+                    onmouseover="this.style.transform='translateY(-50px)'; this.style.boxShadow='0 10px 20px rgba(0, 0, 0, 0.1)';"
+                    onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 8px rgba(0, 0, 0, 0.1)';"
+                  >
+                  
+                    <h5
+                      style="
+                        position: absolute;
+                        display: flex;
+                        color: #fff;
+                        z-index: 100;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        top: 10px;
+                        left: 10%;
+                        right: 10%;
+                        height: 120px;
+                        max-height: 120px;
+                        padding-inline: 20px;
+                      "
+                      >
+                      <%= vehicle?.dName %>
+                    </h5>
+                    <div
+                      style="
+                        position: absolute;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: #fff;
+                        z-index: 100;
+                        top: 140px;
+                        height: 120px;
+                        max-height: 120px;
+                        width: 100%; 
+                      "
+                    >
+                      <div
+                        style="
+                          border: 1px solid #000000; 
+                          background-color: #fff; 
+                          padding: 20px;
+                          border-radius:50%!important;
+                        "
+                      >
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          height="60" 
+                          width="60"
+                          viewBox="0 0 512 512">
+                          <path 
+                            fill="#fec458"
+                            d="M192 0c-17.7 0-32 14.3-32 32V64c0 .1 0 .1 0 .2c-38.6 2.2-72.3 27.3-85.2 64.1L39.6 228.8C16.4 238.4 0 261.3 0 288V432v48c0 17.7 14.3 32 32 32H64c17.7 0 32-14.3 32-32V432H416v48c0 17.7 14.3 32 32 32h32c17.7 0 32-14.3 32-32V432 288c0-26.7-16.4-49.6-39.6-59.2L437.2 128.3c-12.9-36.8-46.6-62-85.2-64.1c0-.1 0-.1 0-.2V32c0-17.7-14.3-32-32-32H192zM165.4 128H346.6c13.6 0 25.7 8.6 30.2 21.4L402.9 224H109.1l26.1-74.6c4.5-12.8 16.6-21.4 30.2-21.4zM96 288a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm288 32a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"
+                          />
+                        </svg>
+                      
+                      </div>
+                    </div>
+                    <div
+                      style="
+                        background-color: rgb(99, 99, 99);
+                        border-top-left-radius: 10px; 
+                        border-top-right-radius: 10px; 
+                        clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 100px), 0% 100%);
+                        padding-top: 20px;
+                        height: 240px;
+                        opacity: 90%;
+                      "
+                    >
+                      <img 
+                        src="<%= vehicleImage[`${vehicle?.cName!='Assured SUV' ? vehicle?.cName : vehicle?.dName}`] %>" 
+                        alt="<%= vehicle?.dName %>"
+                        style="
+                          width: 100%; 
+                          max-height: 200px;
+                          opacity: 50%;
+                        " 
+                      />
+                    </div>
+                    <div 
+                      class="container"
+                      style="
+                        padding-bottom: 20px;
+                        "
+                      >
+                      <div  
+                        style="
+                          padding: 10px;
+                          gap: 15px;
+                          display: flex;
+                          flex-direction: column;
+                          justify-content: center;
+                          align-items: center;
+                        "
+                      >
+                      
+                        <h4>Rs. <%= vehicle?.rate ?? 0 %> / Round Trip</h4>
+                        
+                        <div
+                          style="
+                            display: flex;
+                            flex-direction: column;
+                            gap: 5px;
+                            justify-content: center;
+                            align-items: center;
+                          "
+                        >
+                          <!-- <div style="display: flex; gap: 12px; ">
+                            <span>Round Trip</span>
+                            <span>Rs. <%= vehicle?.Rrate ?? 0 %></span>
+                          </div> -->
+                          
+                          <div style="display: flex; gap: 12px;">
+                            <span>Driver Allowance</span>
+                            <span>Rs. <%= vehicle?.betta ?? 0 %></span>
+                          </div>
+                          
+                          <div style="display: flex; gap: 12px; ">
+                            <span>Roundy Trip - Minimun</span>
+                            <span>
+                              <%= vehicle?.mR ?? 0 %> Km
+                            </span>
+                          </div>
+                          
+                          <!-- <div style="display: flex; gap: 12px;">
+                            <span>Round Trip - Minimun</span>
+                            <span>
+                              <%= vehicle?.mR ?? 0 %> Km
+                            </span>
+                          </div> -->
+                        </div>
+                        <span style="margin-top: 10px;">Toll, State Tax, Hills, Parking Charges - Extra</span>                      
+                        <div class="d-flex justify-content-center align-items-center">
+                          <a href="booking" class="theme-btn">Book Now <i class="far fa-arrow-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <% }) %>
+                
+              </div>
+            </div>
+          </div>
+          
+        <div class="row justify-content-center mt-5">
+       
+          <div class="iconic-box style-four" style="width: 85%; height: 90%;background: #c1c1c1;">
+           
+            <div class="content">
+              <h5><a href="service-details.html">Rates given above are inclusive of GST.</a></h5>
+              <p>
+                Drop Trips - Driver Batta Rs. 400. [Rs. 600 for above 400 kms] - Waiting Charges Rs. 150 per hour.<br>
+                Drop Trips - Minimum running must be 100 Kms.<br>
+                Round Trips - Driver batta is Rs. 500/- per day.<br>
+                Round Trips - Driver batta is Rs. 600/- per day if the distance travelled is more than 500kms in a single day.<br>
+                Round Trips - Minimum running must be 250 Kms per day. For Karnataka it is minimum 300 Kms per day.<br>
+                Round Trips - 1 day means 1 calendar day (from 00:00 hrs to 23:59 hrs).<br>
+                Hill station charges - Rs. 300 for sedan Rs. 500 for MUV.<br>
+                Washing Charges for carrying Pet Rs. 400 for Sedan & Rs. 500 for MUV.<br>
+                Luggage charges Rs. 300 luggage policy page.<br>
+                Only 2 (Pickup & drop) points are allowed. More than that charges will be applicable.<br>
+                Toll fees, Inter-State Permit charges (if any) are extra.
+              </p>
+            </div>
+            
+          </div>
+        </div>
+        <div class="pricing-three-shapes d-none d-sm-block">
+          <div class="shape one">
+            <img src="assets/images/shapes/price1.png" alt="Shape" />
+          </div>
+          <div class="shape two">
+            <img src="assets/images/shapes/price2.png" alt="Shape" />
+          </div>
+        </div>
+        </div>
+      </section>
+      <section
+        class="cta-area bgs-cover py-20 rpy-100"
+        style="background-image: url(assets/images/team/CTA.png)"
+      >
+        <div class="container">
+          <div class="row align-items-center justify-content-between">
+            <div class="col-xl-6 col-lg-8">
+              <div
+                class="cta-content text-white rmb-35"
+                data-aos="fade-left"
+                data-aos-duration="1500"
+                data-aos-offset="50"
+              >
+                <div class="section-title mb-40">
+                  <span class="subtitle d-block mb-10">RIDE WITH US TODAY</span>
+                  <h2>Quick, reliable, and forever ready to go. Reserve a taxi today.</h2>
+                </div>
+                <a href="/booking" class="theme-btn"
+                  >Book Now<i class="far fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Price Three Area End -->
+      <!-- Pricing Area Start -->
+      <!-- <section
+        class="pricing-area-six overflow-hidden rel z-1 pt-125 rpt-95 pb-100 rpb-70"
+      >
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-xl-7 col-lg-9 col-md-11">
+              <div
+                class="section-title text-center mb-60"
+                data-aos="fade-up"
+                data-aos-duration="1500"
+                data-aos-offset="50"
+              >
+                <h2>Easy to Start, Easy to Scale Website Builder Plans</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div
+              class="col-xl-4 col-md-6 col-sm-10"
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              data-aos-offset="50"
+            >
+              <div class="pricing-item style-five">
+                <div class="title-price">
+                  <h5 class="title">Regular</h5>
+                  <div class="price">
+                    <span class="prev">$</span>15.<span class="next">/m</span>
+                  </div>
+                </div>
+                <hr />
+                <div class="text">
+                  Data curation involve the careful election organization, and
+                  maintenance
+                </div>
+                <ul class="icon-list">
+                  <li>
+                    <i class="fal fa-check"></i> 2 Limited sites available
+                  </li>
+                  <li><i class="fal fa-check"></i> 1 GB storage per site</li>
+                  <li><i class="fal fa-check"></i> Up to 5 pages per site</li>
+                  <li class="hide">
+                    <i class="fal fa-check"></i> Free SSL for custom domain
+                  </li>
+                  <li class="hide">
+                    <i class="fal fa-check"></i> Connect custom domain
+                  </li>
+                </ul>
+                <a href="#" class="theme-btn style-two"
+                  >Choose Package <i class="far fa-arrow-right"></i
+                ></a>
+                <div class="footer-text">No credit card required</div>
+              </div>
+            </div>
+            <div
+              class="col-xl-4 col-md-6 col-sm-10"
+              data-aos="fade-up"
+              data-aos-delay="100"
+              data-aos-duration="1500"
+              data-aos-offset="50"
+            >
+              <div class="pricing-item style-five">
+                <div class="title-price">
+                  <h5 class="title color-two">Standard</h5>
+                  <div class="price">
+                    <span class="prev">$</span>35.<span class="next">/m</span>
+                  </div>
+                </div>
+                <hr />
+                <div class="text">
+                  Data curation involve the careful election organization, and
+                  maintenance
+                </div>
+                <ul class="icon-list">
+                  <li>
+                    <i class="fal fa-check"></i> 2 Limited sites available
+                  </li>
+                  <li><i class="fal fa-check"></i> 1 GB storage per site</li>
+                  <li><i class="fal fa-check"></i> Up to 5 pages per site</li>
+                  <li>
+                    <i class="fal fa-check"></i> Free SSL for custom domain
+                  </li>
+                  <li class="hide">
+                    <i class="fal fa-check"></i> Connect custom domain
+                  </li>
+                </ul>
+                <a href="#" class="theme-btn style-two"
+                  >Choose Package <i class="far fa-arrow-right"></i
+                ></a>
+                <div class="footer-text">No credit card required</div>
+              </div>
+            </div>
+            <div
+              class="col-xl-4 col-md-6 col-sm-10"
+              data-aos="fade-up"
+              data-aos-delay="200"
+              data-aos-duration="1500"
+              data-aos-offset="50"
+            >
+              <div class="pricing-item style-five">
+                <div class="title-price">
+                  <h5 class="title color-four">Diamond</h5>
+                  <div class="price">
+                    <span class="prev">$</span>98.<span class="next">/m</span>
+                  </div>
+                </div>
+                <hr />
+                <div class="text">
+                  Data curation involve the careful election organization, and
+                  maintenance
+                </div>
+                <ul class="icon-list">
+                  <li>
+                    <i class="fal fa-check"></i> 2 Limited sites available
+                  </li>
+                  <li><i class="fal fa-check"></i> 1 GB storage per site</li>
+                  <li><i class="fal fa-check"></i> Up to 5 pages per site</li>
+                  <li>
+                    <i class="fal fa-check"></i> Free SSL for custom domain
+                  </li>
+                  <li><i class="fal fa-check"></i> Connect custom domain</li>
+                </ul>
+                <a href="#" class="theme-btn style-two"
+                  >Choose Package <i class="far fa-arrow-right"></i
+                ></a>
+                <div class="footer-text">No credit card required</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+      <!-- Pricing Area End -->
+      <!-- footer area start -->
+      <%- include('./partials/footer') -%>
+      <!-- footer area end -->
+    </div>
+    <!--End pagewrapper-->
+    <!-- Jquery -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Appear Js -->
+    <script src="assets/js/appear.min.js"></script>
+    <!-- Slick -->
+    <script src="assets/js/slick.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- Nice Select -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- Image Loader -->
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <!-- Circle Progress -->
+    <script src="assets/js/circle-progress.min.js"></script>
+    <!-- Skillbar -->
+    <script src="assets/js/skill.bars.jquery.min.js"></script>
+    <!-- Isotope -->
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <!--  WOW Animation -->
+    <script src="assets/js/aos.js"></script>
+    <!-- Custom script -->
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

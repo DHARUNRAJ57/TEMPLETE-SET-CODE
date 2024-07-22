@@ -1,0 +1,104 @@
+{
+    "__collections__": {
+        "trip": {
+            "cars": {
+                "price": [
+                    {
+                        "trip ": "0",
+                        "rate": "14",
+                        "cName": "Sedan",
+                        "betta": "400"
+                    },
+                    {
+                        "trip": "0",
+                        "rate": "14",
+                        "cName": "Prime Sedan",
+                        "betta": "400"
+                    },
+                    {
+                        "trip": "0",
+                        "rate": "19",
+                        "cName": "SUV",
+                        "betta": "400"
+                    },
+                    {
+                        "trip ": "0",
+                        "rate": "20",
+                        "cName": "Prime SUV",
+                        "betta": "400"
+                    },
+                    {
+                        "trip": "0",
+                        "rate": "25",
+                        "cName": "Innova Crysta",
+                        "betta": "400"
+                    },
+                    {
+                        "trip": "1",
+                        "rate": "13",
+                        "cName": "Sedan",
+                        "betta": "400"
+                    },
+                    {
+                        "trip": "1",
+                        "rate": "13",
+                        "cName": "Prime Sedan",
+                        "betta": "400"
+                    },
+                    {
+                        "trip": "1",
+                        "rate": "17",
+                        "cName": "SUV",
+                        "betta": "400"
+                    },
+                    {
+                        "trip": "1",
+                        "rate": "17",
+                        "cName": "Prime SUV",
+                        "betta": "400"
+                    },
+                    {
+                        "trip": "1",
+                        "rate": "22",
+                        "cName": "Innova Crysta",
+                        "betta": "400"
+                    }
+                ],
+                "__collections__": {}
+            },
+            "package": {
+                "packages": [
+                    {
+                        "extraKm": "15",
+                        "car": "Sedan",
+                        "price": "1500",
+                        "extraHr": "150",
+                        "pack": "4hrs-40kms"
+                    },
+                    {
+                        "extraKm": "25",
+                        "car": "SUV",
+                        "price": "1800",
+                        "extraHr": "250",
+                        "pack": "4hrs-40kms"
+                    },
+                    {
+                        "extraKm": "15",
+                        "extraHour": "150",
+                        "car": "Sedan",
+                        "price": "2200",
+                        "pack": "8hrs-80kms"
+                    },
+                    {
+                        "extraKm": "25",
+                        "car": "SUV",
+                        "price": "3500",
+                        "extraHr": "250",
+                        "pack": "8hrs-80kms"
+                    }
+                ],
+                "__collections__": {}
+            }
+        }
+    }
+}

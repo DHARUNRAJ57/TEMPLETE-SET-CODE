@@ -1,0 +1,335 @@
+<html>
+
+<head>
+    <style type="text/css">
+        @import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,900,700,500,300,100);
+
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #E0E0E0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #invoice {
+            position: relative;
+            top: 0px;
+            margin: 0 auto;
+            max-width: 600px;
+            border-radius: 5px;
+            background-color: #ffffff;
+        }
+
+        #invoice-top {
+            min-height: 50px;
+            padding: 10px 10px;
+            border-radius: 5px;
+        }
+
+        #invoice-top .image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #invoice-bot {
+            padding: 20px;
+            min-height: 250px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .title {
+            padding: 0px 20px;
+            text-align: center;
+        }
+
+        .itemtext {
+            font-weight: 600;
+        }
+
+        .text-blue {
+            color: rgb(0, 8, 81);
+        }
+
+        td {
+            padding: 0px 0px 10px;
+        }
+
+        .mt-4 {
+            margin-top: 20px;
+        }
+
+        .ml-4 {
+            margin-left: 20px;
+        }
+
+        .logo {
+            height: 70px;
+        }
+
+        .contact h5 {
+            color: black;
+            display: flex;
+            align-items: center;
+            margin: 10px 0px 0px;
+        }
+
+        .contact h5 a {
+            color: #072039;
+            text-decoration: underline;
+            margin-left: 10px;
+            font-size: 12px;
+        }
+
+        .note {
+            color: rgb(162, 4, 4);
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <div id="invoice">
+
+            <div id="invoice-top" style="display: block; align-items: center; justify-content: center;">
+                <div class="image mb-3" style="display: block; text-align: center;">
+                    <img src="<%= company?.logo %>" alt="image" class="logo">
+                </div>
+                <div class="title">
+                    <h2 class="text-blue">
+                        <%= company?.name %> - Booking Details
+                    </h2>
+                </div>
+            </div>
+
+
+            <div id="invoice-bot">
+
+                <div id="table">
+                    <table>
+                        <tr class="table-row">
+                            <td>
+                                <p class="itemtext">
+                                    Name:
+                                </p>
+                            </td>
+                            <td>
+                                <p class="itemtext ml-4">
+                                    <%= data?.name %>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td>
+                                <p class="itemtext">
+                                    Booking Id:
+                                </p>
+                            </td>
+                            <td>
+                                <p class="itemtext ml-4">
+                                    <%= data?.bookID %>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td>
+                                <p class="itemtext">
+                                    Phone Number:
+                                </p>
+                            </td>
+                            <td>
+                                <p class="itemtext ml-4">
+                                    <%= data?.mobile %>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td>
+                                <p class="itemtext">
+                                    Email Id:
+                                </p>
+                            </td>
+                            <td>
+                                <p class="itemtext ml-4">
+                                    <%= data?.email %>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td>
+                                <p class="itemtext">
+                                    Service:
+                                </p>
+                            </td>
+                            <td>
+                                <p class="itemtext ml-4">
+                                    <%= data?.serviceType %>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td>
+                                <p class="itemtext">
+                                    Car Type:
+                                </p>
+                            </td>
+                            <td>
+                                <p class="itemtext ml-4">
+                                    <%= data?.vehicle?.cName %>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td>
+                                <p class="itemtext">
+                                    Pickup Location:
+                                </p>
+                            </td>
+                            <td>
+                                <p class="itemtext ml-4">
+                                    <%= data?.pickupLocation %>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td>
+                                <p class="itemtext">
+                                    Drop Location:
+                                </p>
+                            </td>
+                            <td>
+                                <p class="itemtext ml-4">
+                                    <%= data?.dropLocation %>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td>
+                                <p class="itemtext">
+                                    Pickup Date:
+                                </p>
+                            </td>
+                            <td>
+                                <p class="itemtext ml-4">
+                                    <%= data?.pickupDate %>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td>
+                                <p class="itemtext">
+                                    Pickup Time:
+                                </p>
+                            </td>
+                            <td>
+                                <p class="itemtext ml-4">
+                                    <%= data?.pickupTime %>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td>
+                                <p class="itemtext">
+                                    Distance:
+                                </p>
+                            </td>
+                            <td>
+                                <p class="itemtext ml-4">
+                                    <%= data?.distance %> km
+                                </p>
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td>
+                                <p class="itemtext">
+                                    Duration:
+                                </p>
+                            </td>
+                            <td>
+                                <p class="itemtext ml-4">
+                                    <%= data?.duration %>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td>
+                                <p class="itemtext">
+                                    Rate/km:
+                                </p>
+                            </td>
+                            <td>
+                                <p class="itemtext ml-4">
+                                    Rs.<%= data?.vehicle?.rate %>/km
+                                </p>
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td>
+                                <p class="itemtext">
+                                    Driver Batta:
+                                </p>
+                            </td>
+                            <td>
+                                <p class="itemtext ml-4">
+                                    Rs.<%= data?.vehicle?.betta %>/day
+                                </p>
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td>
+                                <p class="itemtext">
+                                    Total Price:
+                                </p>
+                            </td>
+                            <td>
+                                <p class="itemtext ml-4">
+                                    Rs.<%= data?.vehicle?.price %>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                    <p class="note mt-4">Toll Gate, Permit, Parking,Hill Station Charges Are Extra.
+                    </p>
+                    <p class="note mb-4" style="color: rgb(3, 92, 3);">Only Includes Driver Allowances</p>
+                </div>
+                <hr>
+                <div class="footer mt-4">
+                    <h3>Contact Us: </h3>
+                    <div class="contact">
+                        <h5>Mobile :
+                            <a href="tel:+91<%= company?.mobile %>">
+                                +91 <%= company?.mobile %>
+                            </a>
+                        </h5>
+                    </div>
+                    <div class="contact">
+                        <h5>Whatsapp :
+                            <a href="https://api.whatsapp.com/send/?phone=+91<%= company?.mobile %>&text=Hello <%= company?.name %>!&type=phone_number&app_absent=0"
+                                target="_blank">
+                                +91 <%= company?.mobile %> 
+                            </a>
+                        </h5>
+                    </div>
+                    <div class="contact">
+                        <h5>Email :
+                            <a href="mailto:<%= company?.email %>">
+                                <%= company?.email %>
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

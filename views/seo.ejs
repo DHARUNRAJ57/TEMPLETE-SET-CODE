@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Title -->
+    <title>Go Savaari</title>
+    <!-- Favicon Icon -->
+    <link
+      rel="shortcut icon"
+      href="/assets/images/logos/favicon1.png"
+      type="image/x-icon"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Flaticon -->
+    <link rel="stylesheet" href="/assets/css/flaticon.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/assets/css/fontawesome-5.14.0.min.css" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="/assets/css/magnific-popup.min.css" />
+    <!-- Nice Select -->
+    <link rel="stylesheet" href="/assets/css/nice-select.min.css" />
+    <!-- Animate -->
+    <link rel="stylesheet" href="/assets/css/aos.css" />
+    <!-- Slick -->
+    <link rel="stylesheet" href="/assets/css/slick.min.css" />
+    <!-- Main Style -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <!-- Preloader -->
+      <div class="preloader"><div class="custom-loader"></div></div>
+
+      <!-- main header -->
+      <%- include('./partials/header') -%>
+
+      <!-- Page Banner Start -->
+      <section
+        class="page-banner-area overlay py-50 rel z-1 bgs-cover text-center"
+        
+      >
+      </section>
+      <!-- Page Banner End -->
+
+      <!-- Blog Standard Area Start -->
+      <section class="blog-standard-area py-130 rpy-100">
+        <div class="container">
+        	<div class="inner-page-wrapper">
+
+            <section id="about-page" class="page-hero-section division">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-10 offset-md-1">
+                    <div class="hero-txt text-center white-color">
+                      <!-- Title -->
+                      <h3 class="h3-xl"><%-data?.origin -%> to <%- data?.destination -%> Go Savaari Cabs</h3>
+                    </div>
+                  </div>
+    
+                </div>
+              </div> <!-- End container -->
+            </section> 
+    
+    
+            <div id="breadcrumb" class="division">
+              <div class="container">
+                <div class="row">
+    
+                  <div class="col-lg-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="/" class="primary-color">Home</a></li>
+                          <li class="breadcrumb-item"><a class="primary-color"><%= data?.origin %> to <%= data?.destination %> taxi</a></li>
+                        </ol>
+                    </nav>
+                  </div> 
+                </div>
+              </div>	
+            </div>
+    
+           
+    
+            <section id="single-post" class="wide-100 single-post-section division">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-10 offset-lg-1">
+                    <img class="img-fluid rounded" src="/assets/images/team/firstimge.jpg" alt="blog-image">
+    
+                    <div class="single-post-title text-center mb-40 mt-4">
+                      <h3 class="h3-sm">
+                        Book a <%- data?.origin -%> to <%- data?.destination -%> Cab on Go Savaari Cabs
+                      </h3>
+                    </div>
+                    <div class="single-post-txt mb-45">
+                      <p class="p-md">
+                        <%- data?.destination -%> is a beautiful tourist destination in India where you can have an enjoyable time with family and friends. You can book a cab from <%- data?.origin -%> to <%- data?.destination -%> and explore its various tourist spots. Numerous private and public transportation options are available to reach <%- data?.destination -%>.
+                      </p>
+                      <p>
+                        While on a road trip from <%- data?.origin -%> to <%- data?.destination -%>, you get to experience scenic landscapes. You can also book cabs from <%- data?.origin -%> airport to <%- data?.destination -%> for a comfortable and hassle-free ride at affordable prices. If your starting point is <%- data?.origin -%>, you can avail of <%- data?.origin -%> to <%- data?.destination -%> cab services through Go Savaari Cabs by making an online booking.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 class="h4-xs">Distance Covered by <%- data?.origin -%> to <%- data?.destination -%> Cab</h4>
+                      <p>
+                        The distance between <%- data?.origin -%> and <%- data?.destination -%> by car is approximately <span class="font-weight-bold"><%- data?.distance -%> km</span>. This distance will change if you alter the route. The time taken to cover this distance depends on your speed and stoppage time during the journey. Throughout the journey, you can encounter various stoppages where you can freshen up.
+                      </p>
+    
+                      <h4 class="h4-xs"><%- data?.origin -%> to <%- data?.destination -%> Cab Fare</h4>
+                      <p>
+                        Various <%- data?.origin -%> to <%- data?.destination -%> car rental services are available, allowing you to hire a cab. By booking through Go Savaari Cabs, you can enjoy exciting discounts and offers. 
+                      </p>
+    
+                      <p class="text-center mb-0 font-weight-bold"><%- data?.origin -%> to <%- data?.destination -%> at <span class="text-success text-underline">Rs.<%= Math.round(((data?.distance<130)? 130 : data?.distance)*14+400) %></span> on Sedan's</p><br>
+                      <p class="text-center mb-0 font-weight-bold"><%- data?.origin -%> to <%- data?.destination -%> at <span class="text-success text-underline">Rs.<%= Math.round(((data?.distance<130)? 130 : data?.distance)*18+500) %></span> on SUV's</p>
+    
+                      <p class="mt-4">The charges to book an outstation cab may vary depending on the date and time of your journey and the type of car you choose for travel. You can also book a <%- data?.destination -%> to <%- data?.origin -%> cab with Go Savaari Cabs.</p>
+    
+                    </div>
+                    <div>
+                      <img class="img-fluid rounded my-4" src="/assets/images/team/secondimage.jpg" alt="blog-image" />
+    
+                      <h4 class="h4-xs"><%- data?.origin -%> to <%- data?.destination -%> Car Rental Services</h4>
+                      <p>
+                        You can find a cab from <%- data?.origin -%> to <%- data?.destination -%> at any time of the year. 
+                        You can customize your tour package according to your requirements. 
+                        Apart from cabs, you can check out taxi bookings at different prices. 
+                        Go Savaari Cabs offers a trusted car rental service with a variety of options to make your journey smoother. 
+                        Depending on your requirements, you can book a hatchback, sedan, or SUV. 
+                        Various car models are listed on Go Savaari Cabs, including Swift Dzire, Ertiga, and Innova. 
+                        You can also check the ratings of each cab before making your booking, and see the profile of each driver. 
+                        All the drivers listed on the Go Savaari Cabs portal are polite, well-trained, and ensure that you have a smooth journey.
+                      </p>
+    
+                      <h4 class="h4-xs">Online Cab Booking with Go Savaari Cabs</h4>
+                      <p>
+                        To book your cab, visit the official travel portal of Go Savaari Cabs. 
+                        Fill in all the required details, including your destination and departure date. 
+                        You will find a list of all available <%- data?.origin -%> to <%- data?.destination -%> cabs. 
+                        You have the option to book your taxi for a one-way trip or a round trip. 
+                        You can also contact the customer service of Go Savaari Cabs for a hassle-free booking experience. 
+                        The booking process is straightforward: simply log in to theGo Savaari Cabs official portal, provide all your details, and select from the available car options at various prices. 
+                        Choose a ride for your travel date and enjoy a smooth journey.
+                      </p>
+    
+                    </div>	
+    
+                  </div>
+                </div>
+              </div> 
+            </section>
+    
+         
+    
+          </div>
+        </div>
+      </section>
+      <!-- Blog Standard Area End -->
+
+      <!-- footer area start -->
+      <%- include('partials/footer') -%>
+      <!-- footer area end -->
+    </div>
+    <!--End pagewrapper-->
+
+    <!-- Jquery -->
+    <script src="/assets/js/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <!-- Appear Js -->
+    <script src="/assets/js/appear.min.js"></script>
+    <!-- Slick -->
+    <script src="/assets/js/slick.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="/assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- Nice Select -->
+    <script src="/assets/js/jquery.nice-select.min.js"></script>
+    <!-- Image Loader -->
+    <script src="/assets/js/imagesloaded.pkgd.min.js"></script>
+    <!-- Circle Progress -->
+    <script src="/assets/js/circle-progress.min.js"></script>
+    <!-- Skillbar -->
+    <script src="/assets/js/skill.bars.jquery.min.js"></script>
+    <!-- Isotope -->
+    <script src="/assets/js/isotope.pkgd.min.js"></script>
+    <!--  AOS Animation -->
+    <script src="/assets/js/aos.js"></script>
+    <!-- Custom script -->
+    <script src="/assets/js/script.js"></script>
+  </body>
+</html>

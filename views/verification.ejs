@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Title -->
+    <title>Go Savaari</title>
+    <!-- Favicon Icon -->
+    <link
+      rel="shortcut icon"
+      href="assets/images/logos/favicon1.png"
+      type="image/x-icon"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Flaticon -->
+    <link rel="stylesheet" href="assets/css/flaticon.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/css/fontawesome-5.14.0.min.css" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css" />
+    <!-- Nice Select -->
+    <link rel="stylesheet" href="assets/css/nice-select.min.css" />
+    <!-- Animate -->
+    <link rel="stylesheet" href="assets/css/aos.css" />
+    <!-- Slick -->
+    <link rel="stylesheet" href="assets/css/slick.min.css" />
+    <!-- Main Style -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <!-- Preloader -->
+      <div class="preloader"><div class="custom-loader"></div></div>
+
+      <!-- main header -->
+      <%- include('./partials/header') -%>
+
+      <!-- Page Banner Start -->
+      <section class="page-banner-area overlay py-50 rel z-1 bgs-cover text-center">
+      </section>
+      <section class="page-banner-area overlay rel z-1 bgs-cover text-center"
+        style="background-image: url(assets/images/backgrounds/howtobook.jpg)">
+        <div class="container">
+          <div class="banner-inner py-20 text-white">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb justify-content-center" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1500"
+                data-aos-offset="50">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active">OTP Verification</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </section>
+      <!-- Page Banner End -->
+
+      <!-- Pricing Area Start -->
+      <!-- <section class="not-found section-padding">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-12 text-center">
+              <h2>Verify <span style="color: #f5b754">OTP</span></h2> -->
+              <!-- <h3>Sorry, We Can't Find That Page!</h3> -->
+              <!-- <p>
+                Verify the OTP for booking con firmation on the provided mobile
+                number.
+              </p>
+             
+              <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <div class="text-center mb-5">
+                            <div class="form-group" style="display: none">
+                                <label>Enter OTP*</label>
+                                <input
+                                    type="text"
+                                    name="otp"
+                                    id="otp"
+                                    class="form-control"
+                                    placeholder="Enter OTP"
+                                />
+                            </div>
+                           
+                            <button id="send_otp_btn" class="btn btn-warning">Send OTP</button>
+                            <button
+                                id="verify_otp_btn"
+                                class="btn btn-warning w-100 mt-4"
+                                style="display: none"
+                            >
+                                Verify
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             
+            </div>
+          </div>
+        </div>
+      </section> -->
+    <section>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 col-md-12 text-center">
+            <h2>Verify <span style="color: #f5b754">OTP</span></h2>
+            <!-- <h3>Sorry, We Can't Find That Page!</h3> -->
+            <p>
+              Verify the OTP for booking con firmation on the provided mobile
+              number.
+            </p>
+           
+            <div class="container">
+              <div class="row justify-content-center">
+                  <div class="col-lg-6 text-center">
+                      <div class="text-center mb-5">
+                         
+                      </div>
+                  </div>
+              </div>
+          </div>
+           
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <% 
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = (today.getMonth() + 1).toString().padStart(2, '0'); 
+        const day = today.getDate().toString().padStart(2, '0');
+        const Hour = today.getHours().toString().padStart(2, '0')
+        const Minute = today.getMinutes().toString().padStart(2, '0')
+        
+        const formattedDate = `${year}-${month}-${day}`; 
+        const formattedTime = `${Hour}:${Minute}`; 
+      %>
+    <div class="box-shadow-1" style="max-width: 80%">
+      <!-- Pricing Area End -->    
+        <form id="bookingForm" action="/estimation" method="post" onsubmit="return book()">
+          <div class="d-none">
+            <input name="serviceType" value="<%= data?.serviceType %>"/>
+            <input name="airportService" value="<%= data?.airportService %>"/>
+            <input name="outstationService" value="<%= data?.outstationService %>"/>
+            <input name="name" value="<%= data?.name %>"/>
+            <input name="mobile" value="<%= data?.mobile %>"/>
+            <input name="dropLocation" value="<%= data?.dropLocation %>"/>
+            <input name="pickupLocation" value="<%= data?.pickupLocation %>"/>
+            <input name="service" value="<%= data?.service %>"/>
+            <input name="bookID" type="number" value="<%= data?.bookID %>" id="bookID"/>
+            <input name="rentalpackage" type="number" value="<%= data?.rentalpackage %>" id="rentalpackage"/>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="input1_wrapper" style="padding-bottom: 18px;">
+                <label for="">Email </label>
+                <div class="input1">
+                  <input type="email" name="email" id="email" class="form-control" required placeholder="Email">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="input1_wrapper" style="padding-bottom: 18px;">
+                <label for="">Pick Date </label>
+                <div class="input1">
+                  <input type="date" name="pDate" id="pDate" value="<%= formattedDate %>" class="form-control" required placeholder="">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="input1_wrapper" style="padding-bottom: 18px;">
+                <label for="">Pick Time </label>
+                <div class="input1">
+                    <input type="time" name="pTime" id="pTime" value="<%= formattedTime %>" required  class="form-control" placeholder="Phone">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6" id="dropInputParent" style="padding-bottom: 18px;">
+              <div class="input1_wrapper">
+                <label for="">Drop Date </label>
+                <div class="input1">
+                  <input type="date" name="dDate" id="dDate" value="<%= formattedDate %>"name="name" class="form-control" required  placeholder="Subject">
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6" id="otpgroup" >
+              <div class="form-group otpIn">
+                  <label for="">Enter your OTP </label>
+                  <input type="number" id="otpTxt" name="otp"  class="form-control" required data-error="Please enter your Otp" name="otp" placeholder="OTP">
+                  <div class="help-block with-errors"></div>
+              </div>
+            </div>
+              
+              
+            <p
+              class="form-messages error text-center mb-3"
+              id="form-messages"
+            ></p>
+
+            
+            <div
+              class="more-btn pt-20 text-center"
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              data-aos-offset="50"
+            >
+              <button  id="otpBtn" type="button"  class="theme-btn" name="submit-form">Send OTP<i class="far fa-arrow-right"></i></button>
+            </div>
+
+
+            <div
+              class="more-btn pt-20 text-center"
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              data-aos-offset="50"
+            >
+              <button id="bookForm" type="submit" class="theme-btn" name="submit-form">Book Now<i class="far fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </form>
+      </div>
+    
+    <!-- footer area start -->
+    <%- include('./partials/footer') -%>
+    <!-- footer area end -->
+    </div>
+    <!--End pagewrapper-->
+    <!-- <script>
+
+      const data = JSON.parse(sessionStorage.getItem("bookingInfo"));
+      delete data?.vehicles;
+
+      const sendBtn = document.getElementById("send_otp_btn");
+      const verifyBtn = document.getElementById("verify_otp_btn");
+
+      sendBtn.addEventListener("click", async () => {
+        const otp = document.getElementById("otp");
+        sendBtn.disabled = true;
+
+        const send = await fetch("/otp/send", {
+          method: "post",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ mobile: data?.mobile }),
+        });
+
+        otpRes = await send.json();
+        console.log("OTP : ", otpRes);
+
+        sendBtn.style.display = "none";
+        otp.parentNode.style.display = "block";
+        verifyBtn.style.display = "block";
+      });
+
+      verifyBtn.addEventListener("click", async () => {
+        verifyBtn.disabled = true;
+
+        const verify = await fetch("/otp/verify", {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          method: "post",
+          body: JSON.stringify({ token: otpRes?.token, otp: otp?.value, data }),
+        });
+        const response = await verify.json();
+
+        if (response?.status == 200) {
+          location.href = "/success";
+        } else if (response?.status == 401) {
+          alert("OTP Incorrect");
+          verifyBtn.disabled = false;
+          
+        } else {
+          alert("Try Again");
+          location.reload();
+        }
+      });
+    </script> -->
+
+
+
+
+
+
+    <script>
+      const loading = document.getElementById('loading')
+      
+      const otptxt = document.getElementById('otpTxt')
+      const email = document.getElementById('email')
+      const otpbtn = document.getElementById('otpBtn')
+      const otpgroup = document.getElementById('otpgroup')
+      const bookForm = document.getElementById('bookForm')
+      const pDate = document.getElementById('pDate')
+      const pTime = document.getElementById('pTime')
+      const dDate = document.getElementById('dDate')
+      const dlabel = document.getElementById('dropInputParent')
+      const bookID = document.getElementById('bookID').value
+      let getdata = JSON.parse(sessionStorage.getItem('bookingInfo'));
+
+      getdata.bookID = bookID
+      console.log("getdata", bookID, getdata, getdata.mobile, getdata.mobile == null || getdata.mobile == undefined);
+
+      if(getdata.mobile == null || getdata.mobile == undefined ){
+        window.location.href = '/booking';
+      }
+
+      var data;
+
+      otpgroup.style.display = "none"
+      bookForm.style.display = "none"
+
+      if (getdata.serviceType == 'One-Way Trip') {
+        dDate.style.display = "none"
+        dlabel.style.display = "none"
+      }
+
+      otpbtn.addEventListener('click', async () => {
+        
+      var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if(email.value==""){
+        alert(`Please Enter Email Id`)
+        return
+      
+      }else if(!email.value.match(mailformat)){
+        alert("Please Enter Valid Email ID")
+        return;
+      }
+      else if(pDate.value==""){
+        alert("Please Select Pickup Date")
+        return;
+      }else if(pTime.value==""){
+        alert("Please Select Pickup Time")
+        return;
+      }
+      else if (new Date(new Date(pDate.value).toLocaleDateString()).getTime() < new Date(new Date().toLocaleDateString()).getTime()) {
+        alert("Please Select a vaild Pickup Date")
+        return;
+      } else if (new Date(new Date(new Date(`${pDate.value}T${pTime.value}`).setSeconds(0)).setMilliseconds(0)).getTime() < new Date(new Date(new Date().setSeconds(0)).setMilliseconds(0)).getTime()) {
+        alert(`Please Select a vaild Pickup Time`)
+        return;
+      }
+      else if (getdata.serviceType !== 'One-Way Trip' && new Date(new Date(dDate.value).toLocaleDateString()).getTime() < new Date(new Date().toLocaleDateString()).getTime()) {
+        alert("Please Select a vaild Drop Date")
+        return;
+      }
+      const result = await fetch('/otp/send', {
+          method: 'post',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ mobile: getdata.mobile })
+      })
+
+      otpgroup.style.display = "initial"
+      otpRes = await result.json()
+
+    
+      bookForm.style.display = "initial"
+      otpbtn.style.display = "none"
+
+      sessionStorage.setItem('bookingInfo', JSON.stringify({
+        ...getdata,
+        pickupDate: pDate.value,
+        email: email.value,
+        pickupTime: pTime.value,
+        dropDate: getdata.serviceType !== 'One Way Trip' ? dDate.value : ""
+      }));
+      console.log("data", {
+        ...getdata,
+        pickupDate: pDate.value,
+        email: email.value,
+        pickupTime: pTime.value,
+        dropDate: getdata.serviceType !== 'One Way Trip' ? dDate.value : ""
+      })
+
+    });
+
+      async function book(e){
+
+          getdata = JSON.parse(sessionStorage.getItem('bookingInfo'));
+          console.log("bookingInfo getdata", getdata)
+          let data = getdata;
+
+          const result = await fetch("/otp/verify", {
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            method: "post",
+            body: JSON.stringify({ token: otpRes?.token, otp: otptxt.value, data }),
+          });
+
+          const response = await result.json()
+          console.log(response);
+
+          if (response.status == 403) {
+            document.getElementById('error-msg').innerHTML = "OTP Invaild";
+            loading.style.display = 'none'
+            return false
+          }
+          if (response.status === 200) {
+            return true
+          }
+        }
+
+
+          
+      </script>
+
+    <!-- Jquery -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Appear Js -->
+    <script src="assets/js/appear.min.js"></script>
+    <!-- Slick -->
+    <script src="assets/js/slick.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- Nice Select -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- Image Loader -->
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <!-- Circle Progress -->
+    <script src="assets/js/circle-progress.min.js"></script>
+    <!-- Skillbar -->
+    <script src="assets/js/skill.bars.jquery.min.js"></script>
+    <!-- Isotope -->
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <!--  WOW Animation -->
+    <script src="assets/js/aos.js"></script>
+    <!-- Custom script -->
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

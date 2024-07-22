@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title>Go Savaari</title>
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" href="assets/images/logos/favicon1.png" type="image/x-icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Flaticon -->
+    <link rel="stylesheet" href="assets/css/flaticon.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/css/fontawesome-5.14.0.min.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <!-- Nice Select -->
+    <link rel="stylesheet" href="assets/css/nice-select.min.css">
+    <!-- jQuery UI -->
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+    <!-- Animate -->
+    <link rel="stylesheet" href="assets/css/aos.css">
+    <!-- Slick -->
+    <link rel="stylesheet" href="assets/css/slick.min.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+</head>
+<body>
+    <div class="page-wrapper">
+
+        <!-- Preloader -->
+        <div class="preloader"><div class="custom-loader"></div></div>
+        <%- include('./partials/header') -%>
+        <!-- main header -->
+      <section class="page-banner-area overlay py-50 rel z-1 bgs-cover text-center">
+      </section>
+      <section class="page-banner-area overlay rel z-1 bgs-cover text-center"
+        style="background-image: url(assets/images/backgrounds/howtobook.jpg)">
+        <div class="container">
+          <div class="banner-inner py-20 text-white">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb justify-content-center" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1500"
+                data-aos-offset="50">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active">Booking Success</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </section>
+       
+       
+        <!-- Coming Soon Area Start -->
+  
+    <!-- divider line -->
+    <div class="line-vr-section"></div>
+    <!-- Not found 404 -->
+    <section class="not-found section-padding">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 col-md-12 text-center">
+            <h2>Booking <span style="color: #f5b754"> Confirmed</span></h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6" style="display: flex; justify-content: center; align-items: center; height: 100%;">
+            <div class="image w-100 overflow-hidden" style="display: flex; justify-content: center; align-items: center;">
+              <img
+              src="/assets/images/cities/tick.gif"
+            
+                alt="Booking Confirmed"
+                style="width: 60%; height: 60%;"
+              />
+            </div>
+          </div>
+          
+          <div class="col-lg-6">
+            <div class="py-4 bookingDetails">
+              <h3>Booking Details :</h3>
+              <ul class="bd_list">
+                <li>
+                  <strong>Booking Id : </strong><span id="bookID"> 98263</span>
+                </li>
+                <li><strong>Name : </strong><span id="name"> Testing</span></li>
+                <li>
+                  <strong>Phone No : </strong
+                  ><span id="mobile"> 1234567890</span>
+                </li>
+                <!-- <li>
+                  <strong>Email ID : </strong
+                  ><span id="email"> test@gmail.com</span>
+                </li> -->
+                <li>
+                  <strong>Service : </strong><span id="service"> One Way</span>
+                </li>
+                <li>
+                  <strong>Car Type : </strong><span id="cName"> Sedan</span>
+                </li>
+                <li>
+                  <strong>Pickup Location : </strong
+                  ><span id="pick"> Orgin</span>
+                </li>
+                <li>
+                  <strong>Drop Location : </strong
+                  ><span id="dropLocation"> Destination</span>
+                </li>
+                <li>
+                  <strong>Distance : </strong><span id="distance"> 100</span>km
+                </li>
+                <li>
+                  <strong>Duration : </strong><span id="duration"> 10hr</span>
+                </li>
+                <li>
+                  <strong>Pickup Date : </strong
+                  ><span id="pickupDate"> Pickup Date</span>
+                </li>
+                <li>
+                  <strong>Pickup Time : </strong
+                  ><span id="pickupTime"> Pickup Time</span>
+                </li>
+                <li id="dropDate"></li>
+                <li>
+                  <strong>Esitmated Fare : </strong>Rs.<span id="price">Price</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="text-center py-4">
+                <a
+                    onclick="sendMsgToWhatsapp()"
+                    class="text-white bg-success px-4 py-3 rounded cursor-pointer"
+                    style="cursor: pointer;"
+                >Send to Whatsapp</a>
+            </div>
+        </div>
+        </div>
+      </div>
+    </section>
+        <!-- Coming Soon Area End -->
+        <%- include('./partials/footer') -%>
+
+    </div>
+    <!--End pagewrapper-->
+   
+<script>
+  const bookingData = JSON.parse(sessionStorage.getItem("bookingInfo"));
+
+  const { vehicles, ...data } = bookingData   
+console.log(vehicles,data)
+  const {
+    bookID,
+    name,
+    mobile,
+   
+    pickupLocation,
+    dropLocation,
+    pickupDate,
+    pickupTime,
+    service,
+    serviceType,
+    vehicle,
+  } = bookingData;
+
+  const elementsId = [
+    "name",
+    "mobile",
+    "bookID",
+    "pick",
+    "dropLocation",
+    "distance",
+    "duration",
+ 
+    "serviceType",
+    "pickupDate",
+    "pickupTime",
+  ];
+  elementsId.forEach((id) => {
+    try {
+      document.getElementById(id).innerHTML = bookingData[id];
+    } catch (err) {}
+  });
+
+  document.getElementById("service").innerHTML = serviceType;
+  document.getElementById("price").innerHTML = vehicle?.price;
+  document.getElementById("cName").innerHTML = vehicle?.cName;
+
+  if (bookingData?.service == "1") {
+    document.getElementById("dropDate").innerHTML =
+      "<strong>Drop Date : </strong>" + bookingData?.dropDate;
+  }
+
+  function sendMsgToWhatsapp() {
+    const message =
+      `Hello TRS Test Taxi!/n/nMy+booking+details:/nBooking+Id:+${bookID}/nName:+${name}/nMobile:+${mobile}/nPickup+Location:+${pickupLocation}/nDrop+Location:+${dropLocation}/nPickup+Date:+${pickupDate}/nService:+${serviceType}/nPrice:+Rs.${vehicle?.price}/nCar:+${vehicle?.cName}`.replaceAll(
+        "/n",
+        "%0A"
+      );
+    const whatsappLink = `https://api.whatsapp.com/send/?phone=+919986834563&text=${message}&type=phone_number&app_absent=0`;
+    window.open(whatsappLink, "_blank");
+  }
+  sendMsgToWhatsapp();
+</script>
+    
+    <!-- Jquery -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Appear Js -->
+    <script src="assets/js/appear.min.js"></script>
+    <!-- Slick -->
+    <script src="assets/js/slick.min.js"></script>
+    <!-- jQuery UI -->
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- Nice Select -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- Image Loader -->
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <!-- Circle Progress -->
+    <script src="assets/js/circle-progress.min.js"></script>
+    <!-- Skillbar -->
+    <script src="assets/js/skill.bars.jquery.min.js"></script>
+    <!-- Isotope -->
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <!--  AOS Animation -->
+    <script src="assets/js/aos.js"></script>
+    <!-- Custom script -->
+    <script src="assets/js/script.js"></script>
+
+</body>
+</html>
